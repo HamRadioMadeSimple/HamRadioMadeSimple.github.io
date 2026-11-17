@@ -120,6 +120,8 @@
   .app ul { margin: 0 0 16px; padding-left: 20px; }
   .app li { margin: 4px 0; }
   .app .btns .btn { padding: 8px 14px; font-size: .95rem; }
+  .app.wide { grid-template-columns: 1fr; }
+  .shot { margin: 0; }
   .shot img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); display: block; }
   .shot figcaption { color: var(--muted); font-size: .85rem; margin-top: 6px; }
   .os { font-size: .9rem; color: var(--muted); margin: 0 0 14px; }
@@ -224,7 +226,7 @@
         </figure>
       </article>
 
-      <article class="app" id="js8map-spotter">
+      <article class="app wide" id="js8map-spotter">
         <div>
           <h3>JS8Map Spotter</h3>
           <p class="tag">See every station JS8Call hears, on a live map</p>
@@ -240,6 +242,10 @@
             <a class="btn" href="https://github.com/HamRadioMadeSimple/JS8MapSpotter">Code and guides</a>
           </div>
         </div>
+        <figure class="shot">
+          <img src="images/js8map-spotter.webp" width="1666" height="910" loading="lazy" alt="JS8Map Spotter map of the United States with JS8Call stations, signal reports and paths to the home station in North Carolina">
+          <figcaption>JS8Map Spotter: stations heard on JS8Call, with signal reports and paths</figcaption>
+        </figure>
       </article>
 
       <article class="app" id="js8mapchat">
@@ -259,7 +265,7 @@
         </div>
       </article>
 
-      <article class="app" id="fcc-lookup">
+      <article class="app has-shot" id="fcc-lookup">
         <div>
           <h3>FCC Lookup</h3>
           <p class="tag">Offline callsign lookup, U.S. and Canada</p>
@@ -274,6 +280,10 @@
             <a class="btn" href="https://github.com/HamRadioMadeSimple/FCC_Lookup">Code and guides</a>
           </div>
         </div>
+        <figure class="shot">
+          <img src="images/fcc-lookup.webp" width="767" height="657" loading="lazy" alt="FCC Lookup window with U.S. and Canadian license databases loaded">
+          <figcaption>FCC Lookup: 1.6 million U.S. and 92,000 Canadian records, offline</figcaption>
+        </figure>
       </article>
     </div>
   </section>

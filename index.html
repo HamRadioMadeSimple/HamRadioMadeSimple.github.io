@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ham Radio Made Simple: free ham radio software for Windows and Linux (KW3KW)</title>
+<meta name="description" content="Free, open-source ham radio programs by KW3KW of the Ham Radio Made Simple YouTube channel: RigPanel (IC-7300 / FT-891 control through flrig), Flrig EMCOMM, JS8Map Spotter, JS8MapChat and FCC Lookup. Windows and Linux.">
+<link rel="canonical" href="https://hamradiomadesimple.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ham Radio Made Simple: free ham radio software">
+<meta property="og:description" content="RigPanel, Flrig EMCOMM, JS8Map Spotter, JS8MapChat and FCC Lookup. Free for Windows and Linux.">
+<meta property="og:url" content="https://hamradiomadesimple.github.io/">
+<meta property="og:image" content="https://hamradiomadesimple.github.io/images/rigpanel.webp">
+<meta name="theme-color" content="#0d1b2a">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://hamradiomadesimple.github.io/#org",
+      "name": "Ham Radio Made Simple",
+      "alternateName": ["HamRadioMadeSimple", "KW3KW"],
+      "url": "https://hamradiomadesimple.github.io/",
+      "sameAs": [
+        "https://www.youtube.com/@hamradiomadesimple",
+        "https://github.com/HamRadioMadeSimple"
+      ]
+    },
+    {"@type": "SoftwareApplication", "name": "RigPanel", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Windows, Linux",
+     "description": "One-screen control panel for the Icom IC-7300, Yaesu FT-891 and other radios, working through flrig so digital apps keep sharing the radio.",
+     "url": "https://github.com/HamRadioMadeSimple/RigPanel", "downloadUrl": "https://github.com/HamRadioMadeSimple/RigPanel/releases/latest",
+     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@id": "https://hamradiomadesimple.github.io/#org"}},
+    {"@type": "SoftwareApplication", "name": "Flrig EMCOMM", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Windows, Linux",
+     "description": "Organized station list (nets, emergency, weather, shortwave, digital) that tunes your radio through flrig with a double-click.",
+     "url": "https://github.com/HamRadioMadeSimple/Flrig-EMCOMM", "downloadUrl": "https://github.com/HamRadioMadeSimple/Flrig-EMCOMM/releases/latest",
+     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@id": "https://hamradiomadesimple.github.io/#org"}},
+    {"@type": "SoftwareApplication", "name": "JS8Map Spotter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Windows, Linux",
+     "description": "Live map of every station JS8Call hears, with CommStat StatReps, MCForms and QSOs between other stations.",
+     "url": "https://github.com/HamRadioMadeSimple/JS8MapSpotter", "downloadUrl": "https://github.com/HamRadioMadeSimple/JS8MapSpotter/releases/latest",
+     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@id": "https://hamradiomadesimple.github.io/#org"}},
+    {"@type": "SoftwareApplication", "name": "JS8MapChat (JS8Map and JS8FastChat)", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Windows, Linux",
+     "description": "JS8Map plots JS8Call stations on a live map; JS8FastChat is a compact chat window for working a selected station.",
+     "url": "https://github.com/HamRadioMadeSimple/JS8MapChat", "downloadUrl": "https://github.com/HamRadioMadeSimple/JS8MapChat/releases/latest",
+     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@id": "https://hamradiomadesimple.github.io/#org"}},
+    {"@type": "SoftwareApplication", "name": "FCC Lookup", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Windows, Linux",
+     "description": "Offline callsign lookup for U.S. FCC and Canadian amateur radio licenses.",
+     "url": "https://github.com/HamRadioMadeSimple/FCC_Lookup", "downloadUrl": "https://github.com/HamRadioMadeSimple/FCC_Lookup/releases",
+     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@id": "https://hamradiomadesimple.github.io/#org"}}
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #0d1b2a;
+    --panel: #13263a;
+    --panel-2: #183049;
+    --line: #25425f;
+    --text: #e8eef5;
+    --muted: #a9bacb;
+    --lcd: #3ee07a;
+    --amber: #f2b33d;
+    --link: #8cc8ff;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
+  }
+  a { color: var(--link); }
+  a:hover { color: #fff; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  header.top {
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, #10233a 0%, var(--bg) 100%);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap; }
+  .brand { font-weight: 700; font-size: 1.05rem; letter-spacing: .02em; color: var(--text); text-decoration: none; }
+  .brand .call { font-family: ui-monospace, "Cascadia Mono", "DejaVu Sans Mono", monospace; color: var(--lcd); margin-left: 8px; font-weight: 600; }
+  nav a { color: var(--muted); text-decoration: none; margin-left: 18px; font-size: .95rem; }
+  nav a:hover { color: var(--text); }
+
+  .hero { padding-top: 56px; padding-bottom: 44px; }
+  .lcd {
+    display: inline-block;
+    font-family: ui-monospace, "Cascadia Mono", "DejaVu Sans Mono", monospace;
+    background: #06120c; color: var(--lcd);
+    border: 1px solid #1f4d33; border-radius: 6px;
+    padding: 4px 10px; font-size: .9rem; letter-spacing: .06em;
+  }
+  h1 { font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.15; margin: 18px 0 14px; }
+  .lead { font-size: 1.15rem; color: var(--muted); max-width: 46em; margin: 0 0 26px; }
+  .btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 600;
+    padding: 11px 18px; border-radius: 8px; border: 1px solid var(--line);
+    color: var(--text); background: var(--panel-2);
+  }
+  .btn:hover { border-color: var(--link); color: #fff; }
+  .btn.primary { background: var(--amber); color: #1a1205; border-color: var(--amber); }
+  .btn.primary:hover { background: #ffc85a; color: #1a1205; }
+
+  section { padding: 34px 0; }
+  h2 { font-size: 1.6rem; margin: 0 0 6px; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+
+  .app {
+    background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 24px; margin-bottom: 22px;
+    display: grid; grid-template-columns: 1fr; gap: 20px;
+  }
+  .app.has-shot { grid-template-columns: 1.05fr 1fr; align-items: start; }
+  .app h3 { margin: 0; font-size: 1.4rem; }
+  .tag { color: var(--amber); font-weight: 600; margin: 4px 0 12px; }
+  .app ul { margin: 0 0 16px; padding-left: 20px; }
+  .app li { margin: 4px 0; }
+  .app .btns .btn { padding: 8px 14px; font-size: .95rem; }
+  .shot img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); display: block; }
+  .shot figcaption { color: var(--muted); font-size: .85rem; margin-top: 6px; }
+  .os { font-size: .9rem; color: var(--muted); margin: 0 0 14px; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+  .card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+  .card p { margin: 0; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--muted); font-size: .92rem; }
+
+  @media (max-width: 760px) {
+    .app.has-shot, .grid2 { grid-template-columns: 1fr; }
+    .app.has-shot .shot { order: -1; }
+    nav a { margin: 0 14px 0 0; }
+    .hero { padding-top: 36px; padding-bottom: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#">Ham Radio Made Simple<span class="call">KW3KW</span></a>
+    <nav>
+      <a href="#apps">Apps</a>
+      <a href="#videos">Videos</a>
+      <a href="#help">Help</a>
+      <a href="https://github.com/HamRadioMadeSimple">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <span class="lcd">FREE &middot; OPEN SOURCE &middot; WINDOWS + LINUX</span>
+    <h1>Free ham radio software, made simple</h1>
+    <p class="lead">
+      Programs for running your station from the computer: rig control through flrig, a station list that tunes your radio,
+      live JS8Call maps and chat, and an offline callsign lookup. Made by KW3KW of the
+      <a href="https://www.youtube.com/@hamradiomadesimple">Ham Radio Made Simple</a> YouTube channel,
+      for hams who want things to just work.
+    </p>
+    <div class="btns">
+      <a class="btn primary" href="#apps">See the apps</a>
+      <a class="btn" href="https://www.youtube.com/@hamradiomadesimple">YouTube channel</a>
+      <a class="btn" href="https://github.com/HamRadioMadeSimple">All code on GitHub</a>
+    </div>
+  </div>
+
+  <section id="apps">
+    <div class="wrap">
+      <h2>The apps</h2>
+      <p class="sub">Every download is free. The download button always gets the newest version.</p>
+
+      <article class="app has-shot" id="rigpanel">
+        <div>
+          <h3>RigPanel</h3>
+          <p class="tag">Control your IC-7300 or FT-891 from one screen</p>
+          <p class="os">Windows and Linux &middot; works through flrig</p>
+          <ul>
+            <li>Tune, change bands, VFO A/B, split and RIT; meters for S, power, SWR and ALC.</li>
+            <li><b>Voice / Data / CW</b> buttons set mode, width, levels and radio menus in one click.</li>
+            <li><b>Default Settings</b> puts your radio back the way you like it, and tells you what changed.</li>
+            <li>Tap <b>Ctrl</b> in any program and RigPanel jumps to the front.</li>
+            <li>Because it goes through flrig, WSJT-X, JS8Call and fldigi keep sharing the radio.</li>
+            <li>Other radios flrig supports work for the basics; more Icom and Yaesu models can be added.</li>
+          </ul>
+          <div class="btns">
+            <a class="btn primary" href="https://github.com/HamRadioMadeSimple/RigPanel/releases/latest">Download</a>
+            <a class="btn" href="https://github.com/HamRadioMadeSimple/RigPanel/tree/main/docs">Guides (PDF)</a>
+            <a class="btn" href="https://github.com/HamRadioMadeSimple/RigPanel">Code</a>
+          </div>
+        </div>
+        <figure class="shot">
+          <img src="images/rigpanel.webp" width="1000" height="790" loading="lazy" alt="RigPanel main window controlling an IC-7300 on 40 meters">
+          <figcaption>RigPanel with an IC-7300 on 40 m</figcaption>
+        </figure>
+      </article>
+
+      <article class="app has-shot" id="flrig-emcomm">
+        <div>
+          <h3>Flrig EMCOMM</h3>
+          <p class="tag">A station list that tunes your radio</p>
+          <p class="os">Windows and Linux &middot; works through flrig</p>
+          <ul>
+            <li>Double-click a station and the radio goes there: frequency, mode and filter.</li>
+            <li>Tabs for nets, emergency, weather and time, shortwave, broadcast, digital and CW.</li>
+            <li>Starter list included: WWV, VOLMET, USCG weather, Hurricane Watch Net, MAGNET, AmRRON and more.</li>
+            <li>Search by name, frequency, band, mode or distance from home.</li>
+            <li>Build your own lists with any AI chat tool, or import a spreadsheet (CSV).</li>
+          </ul>
+          <div class="btns">
+            <a class="btn primary" href="https://github.com/HamRadioMadeSimple/Flrig-EMCOMM/releases/latest">Download</a>
+            <a class="btn" href="https://github.com/HamRadioMadeSimple/Flrig-EMCOMM/tree/main/docs">Guides (PDF)</a>
+            <a class="btn" href="https://github.com/HamRadioMadeSimple/Flrig-EMCOMM">Code</a>
+          </div>
+        </div>
+        <figure class="shot">
+          <img src="images/flrig-emcomm.webp" width="1200" height="680" loading="lazy" alt="Flrig EMCOMM station list with favorites, nets and emergency frequencies">
+          <figcaption>Flrig EMCOMM, dark theme</figcaption>
+        </figure>
+      </article>
+
+      <article class="app" id="js8map-spotter">
+        <div>
+          <h3>JS8Map Spotter</h3>
+          <p class="tag">See every station JS8Call hears, on a live map</p>
+          <p class="os">Windows and Linux &middot; works with JS8Call</p>
+          <ul>
+            <li>Stations placed from their grid or from FCC and Canadian license data; the map works offline.</li>
+            <li>Emergency traffic on top: CommStat StatReps, MCForms (F! micro forms) and alerts.</li>
+            <li>Shows QSOs between other stations and keeps a 7-day log of directed messages.</li>
+            <li>Never transmits on its own: nothing goes out unless you click send.</li>
+          </ul>
+          <div class="btns">
+            <a class="btn primary" href="https://github.com/HamRadioMadeSimple/JS8MapSpotter/releases/latest">Download</a>
+            <a class="btn" href="https://github.com/HamRadioMadeSimple/JS8MapSpotter">Code and guides</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="app" id="js8mapchat">
+        <div>
+          <h3>JS8MapChat: JS8Map and JS8FastChat</h3>
+          <p class="tag">A JS8Call map plus a fast chat window</p>
+          <p class="os">Windows and Linux &middot; works with JS8Call</p>
+          <ul>
+            <li><b>JS8Map</b> plots the stations JS8Call hears, with relay paths and filters for who hears whom.</li>
+            <li><b>JS8FastChat</b> is a compact chat window for working one station, with an inbox and watch words.</li>
+            <li>Each runs on its own; run both and a button in each brings the other forward.</li>
+          </ul>
+          <div class="btns">
+            <a class="btn primary" href="https://github.com/HamRadioMadeSimple/JS8MapChat/releases/latest">Download</a>
+            <a class="btn" href="https://github.com/HamRadioMadeSimple/JS8MapChat">Code and guides</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="app" id="fcc-lookup">
+        <div>
+          <h3>FCC Lookup</h3>
+          <p class="tag">Offline callsign lookup, U.S. and Canada</p>
+          <p class="os">Windows and Linux</p>
+          <ul>
+            <li>Type a callsign, get the licensee, with no internet needed once the database is built.</li>
+            <li>Builds its own database straight from the FCC and ISED Canada, and updates it when you ask.</li>
+            <li>Distance and bearing from your home station; shares its database with JS8Map.</li>
+          </ul>
+          <div class="btns">
+            <a class="btn primary" href="https://github.com/HamRadioMadeSimple/FCC_Lookup/releases">Download</a>
+            <a class="btn" href="https://github.com/HamRadioMadeSimple/FCC_Lookup">Code and guides</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="videos">
+    <div class="wrap">
+      <h2>Videos</h2>
+      <p class="sub">Step-by-step videos for non-technical hams, on the Ham Radio Made Simple channel.</p>
+      <div class="grid2">
+        <a class="card" href="https://youtu.be/p99_L9B1YA8" style="text-decoration:none">
+          <h3>Overview of JS8Map &rarr;</h3>
+          <p>What the map shows and how to set it up with JS8Call.</p>
+        </a>
+        <a class="card" href="https://youtu.be/yJJw8RieM4U" style="text-decoration:none">
+          <h3>Overview of JS8FastChat &rarr;</h3>
+          <p>Working a station from the compact chat window.</p>
+        </a>
+      </div>
+      <p style="margin-top:18px"><a class="btn" href="https://www.youtube.com/@hamradiomadesimple">All videos on YouTube</a></p>
+    </div>
+  </section>
+
+  <section id="help">
+    <div class="wrap">
+      <h2>Getting help</h2>
+      <div class="grid2">
+        <div class="card">
+          <h3>Start with the guide</h3>
+          <p>Each app has a Quick Start or install guide as a PDF, linked from its page on GitHub.</p>
+        </div>
+        <div class="card">
+          <h3>Found a problem?</h3>
+          <p>Open an issue on that app's GitHub page (the <b>Issues</b> tab). Say which radio, which app version and Windows or Linux.</p>
+        </div>
+        <div class="card">
+          <h3>You'll need flrig or JS8Call</h3>
+          <p>RigPanel and Flrig EMCOMM talk to your radio through <a href="http://www.w1hkj.org/">flrig</a>.
+             The map and chat apps work with <a href="https://js8call.com">JS8Call</a>.</p>
+        </div>
+        <div class="card">
+          <h3>Free and open source</h3>
+          <p>All apps are free under the GNU GPL. The code is on <a href="https://github.com/HamRadioMadeSimple">GitHub</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Ham Radio Made Simple &middot; KW3KW &middot;
+    <a href="https://www.youtube.com/@hamradiomadesimple">YouTube</a> &middot;
+    <a href="https://github.com/HamRadioMadeSimple">GitHub</a><br>
+    flrig is by W1HKJ and the fldigi team; JS8Call is by KN4CRD. These apps are independent and work alongside them.
+  </div>
+</footer>
+
+</body>
+</html>

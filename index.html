@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ham Radio Made Simple: free ham radio software for Windows and Linux (KW3KW)</title>
-<meta name="description" content="Free, open-source ham radio programs by KW3KW of the Ham Radio Made Simple YouTube channel: RigPanel (IC-7300 / FT-891 control through flrig), Flrig EMCOMM, JS8Map Spotter, JS8MapChat and FCC Lookup. Windows and Linux.">
+<meta name="description" content="Free, open-source ham radio programs by KW3KW of the Ham Radio Made Simple YouTube channel: RigPanel (IC-7300 / FT-891 control through flrig), Flrig EMCOMM, JS8Map Spotter, JS8MapChat, FCC Lookup and DigiApp Launcher (opens your digital-mode programs in order with one click). Windows and Linux.">
 <link rel="canonical" href="https://hamradiomadesimple.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ham Radio Made Simple: free ham radio software">
-<meta property="og:description" content="RigPanel, Flrig EMCOMM, JS8Map Spotter, JS8MapChat and FCC Lookup. Free for Windows and Linux.">
+<meta property="og:description" content="RigPanel, Flrig EMCOMM, JS8Map Spotter, JS8MapChat, FCC Lookup and DigiApp Launcher. Free for Windows and Linux.">
 <meta property="og:url" content="https://hamradiomadesimple.github.io/">
 <meta property="og:image" content="https://hamradiomadesimple.github.io/images/rigpanel.webp">
 <meta name="theme-color" content="#0d1b2a">
@@ -46,6 +46,10 @@
     {"@type": "SoftwareApplication", "name": "FCC Lookup", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Windows, Linux",
      "description": "Offline callsign lookup for U.S. FCC and Canadian amateur radio licenses.",
      "url": "https://github.com/HamRadioMadeSimple/FCC_Lookup", "downloadUrl": "https://github.com/HamRadioMadeSimple/FCC_Lookup/releases",
+     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@id": "https://hamradiomadesimple.github.io/#org"}},
+    {"@type": "SoftwareApplication", "name": "DigiApp Launcher", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Windows, Linux",
+     "description": "Opens your digital-mode radio programs (flrig, JS8Call, Fldigi, WSJT-X and helpers) in order, waiting between each one, from one click on a taskbar or panel icon; closes them again in reverse order.",
+     "url": "https://github.com/HamRadioMadeSimple/DigiApp-Launcher", "downloadUrl": "https://github.com/HamRadioMadeSimple/DigiApp-Launcher/releases/latest",
      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@id": "https://hamradiomadesimple.github.io/#org"}}
   ]
 }
@@ -161,7 +165,8 @@
     <h1>Free ham radio software, made simple</h1>
     <p class="lead">
       Programs for running your station from the computer: rig control through flrig, a station list that tunes your radio,
-      live JS8Call maps and chat, and an offline callsign lookup. Made by KW3KW of the
+      live JS8Call maps and chat, an offline callsign lookup, and a launcher that opens them all in order with one click.
+      Made by KW3KW of the
       <a href="https://www.youtube.com/@hamradiomadesimple">Ham Radio Made Simple</a> YouTube channel,
       for hams who want things to just work.
     </p>
@@ -289,6 +294,30 @@
           <figcaption>FCC Lookup: 1.6 million U.S. and 92,000 Canadian records, offline</figcaption>
         </figure>
       </article>
+
+      <article class="app has-shot" id="digiapp-launcher">
+        <div>
+          <h3>DigiApp Launcher</h3>
+          <p class="tag">Start your whole digital station with one click</p>
+          <p class="os">Windows and Linux &middot; starts flrig, JS8Call, Fldigi, WSJT-X and more</p>
+          <ul>
+            <li>Opens your programs <b>in order</b>, waiting the seconds you choose so each one is ready before the next.</li>
+            <li><b>Profiles</b> for each setup (JS8 net, Fldigi messaging...): click the taskbar or panel icon for your default, right-click for the others.</li>
+            <li><b>Close Open Apps</b> shuts everything down in reverse order and waits for any &ldquo;Save changes?&rdquo; question.</li>
+            <li>Starts the other apps here too: <a href="#rigpanel">RigPanel</a>, <a href="#js8map-spotter">JS8Map Spotter</a>, <a href="#js8mapchat">JS8FastChat</a>, <a href="#fcc-lookup">FCC Lookup</a>.</li>
+            <li>Add programs from the installed-apps list or by drag and drop; minimize the ones you don&rsquo;t need to see; light or dark look.</li>
+          </ul>
+          <div class="btns">
+            <a class="btn primary" href="https://github.com/HamRadioMadeSimple/DigiApp-Launcher/releases/latest">Download</a>
+            <a class="btn" href="https://github.com/HamRadioMadeSimple/DigiApp-Launcher/tree/main/docs">Guides (PDF)</a>
+            <a class="btn" href="https://github.com/HamRadioMadeSimple/DigiApp-Launcher">Code</a>
+          </div>
+        </div>
+        <figure class="shot">
+          <img src="images/digiapp-launcher.webp" width="1095" height="733" loading="lazy" alt="DigiApp Launcher editor with a JS8Call profile: flrig, RigPanel, JS8Call, JS8Map Spotter and JS8FastChat in order, with wait times and minimize boxes">
+          <figcaption>DigiApp Launcher: one profile opens flrig, RigPanel, JS8Call and JS8Map Spotter in order</figcaption>
+        </figure>
+      </article>
     </div>
   </section>
 
@@ -329,7 +358,7 @@
         </div>
         <div class="card">
           <h3>Free and open source</h3>
-          <p>All apps are free under the GNU GPL. The code is on <a href="https://github.com/HamRadioMadeSimple">GitHub</a>.</p>
+          <p>All apps are free and open source (GNU GPL; DigiApp Launcher uses the MIT license). The code is on <a href="https://github.com/HamRadioMadeSimple">GitHub</a>.</p>
         </div>
       </div>
     </div>
